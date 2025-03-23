@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const SingleDiscountDetail = ({item}) => {
     
     return (
+        <>
         <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content flex-col lg:flex-row">
     <img
@@ -15,10 +16,14 @@ const SingleDiscountDetail = ({item}) => {
       <p className="py-6">
       {item.description}
       </p>
-      <NavLink  to='/availablecars' className="btn btn-primary"> Now Go to Available Cars</NavLink>
+      <NavLink  to='/availablecars' className="btn btn-primary">  Available Cars</NavLink>
     </div>
   </div>
+    <div className='text-right absolute right-10 md:right-20 bottom-20  my-4'>
+    <NavLink  to='/alldiscountscars' className="btn   btn-primary">   all Discount Cars  </NavLink>
+    </div>
 </div>
+        </>
     );
 };
 

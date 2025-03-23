@@ -11,7 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <Header title={"Browse Our Car Collection  "}> </Header>
       <CarsCollections></CarsCollections>
-      <Header title={" Now Running Speacel Discount for you  "}> </Header>
+      <Header title={" Now Running Special  Discount for you  "}> </Header>
 <DiscountCars></DiscountCars>
       <Header title={" More than just a rental – A better experience "}>
         {" "}

@@ -30,7 +30,7 @@ const DiscountCars = () => {
 <>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-      {discounts.map((discount, index) => (
+      {discounts.slice(0,4).map((discount, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
           <img src={discount.img} alt={discount.title} className="w-full h-48 object-cover" />
           <div className="p-4">

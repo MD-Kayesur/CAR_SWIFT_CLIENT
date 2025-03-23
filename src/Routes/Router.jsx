@@ -11,6 +11,7 @@ import CarsCollections from "../Pages/Home/CarsCollection/CarsCollections";
 import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
 import AllDiscountsCar from "../Pages/Home/DiscountCars/AllDiscountsCar";
 import Discountetails from "../Pages/Home/DiscountCars/DiscountDetails/Discountetails";
+import CarDetails from "../Pages/Home/CarsCollection/CarDetails/CarDetails";
 
  
 export const router = createBrowserRouter([
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
         {
             path:'/availablecars',
             element:<CorCollection></CorCollection>
+        },
+        {
+            path:'/cardetails/:id',
+            element:<CarDetails></CarDetails>
         },
         {
             path:'/alldiscountscars',
