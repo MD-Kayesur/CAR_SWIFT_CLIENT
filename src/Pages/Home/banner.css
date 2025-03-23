@@ -1,0 +1,17 @@
+.banner {
+  transition: 0.5s ease;
+  animation: slideButtom4s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes slideButtom {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}

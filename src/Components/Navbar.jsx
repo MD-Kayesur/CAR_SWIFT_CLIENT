@@ -1,26 +1,26 @@
-// import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 // import img1 from "../imgs/buliding_banner/bulding_logo.jpg";
-// import { useContext } from "react";
-// import { AuthContext } from "../Providers/AuthProviders";
-// import Swal from "sweetalert2";
+import { useContext } from "react";
+import img1 from '../../src/Images/car_imgs/car2.jpg'
+import Swal from "sweetalert2";
 // import "/Nacbar.css";
-import './Nacbar.css';
-import { NavLink } from "react-router-dom";
+import "./Nacbar.css";
+import { AuthContext } from "../authentication/AuthProvider";
 
 const Navbers = () => {
-//   const Navigate = useNavigate();
-//   const { user, signout } = useContext(AuthContext);
- const user = true
-//   const handlerSignout = () => {
-//     signout().then(() => {
-//       Swal.fire({
-//         title: " success!",
-//         icon: "success",
-//         draggable: true,
-//       });
-//       Navigate("/login");
-//     });
-//   };
+  const Navigate = useNavigate();
+  const { user, signout } = useContext(AuthContext);
+  //  const user = true
+  const handlerSignout = () => {
+    signout().then(() => {
+      Swal.fire({
+        title: " success!",
+        icon: "success",
+        draggable: true,
+      });
+      Navigate("/login");
+    });
+  };
 
   const navlink = (
     <>
@@ -29,7 +29,7 @@ const Navbers = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/Available_Cars">Available_Cars</NavLink>
+          <NavLink to="/availablecars">Available_Cars</NavLink>
         </li>
         <li>
           <NavLink to="/My_Cars">My_Cars</NavLink>
@@ -40,22 +40,34 @@ const Navbers = () => {
         <li>
           <NavLink to="/My_Booking">My_Booking</NavLink>
         </li>
-       
-        {/* <li>
-          <NavLink to="/cupondetails">Cupon Details</NavLink>
-        </li> */}
-        {/* <li>
-          <NavLink to="/agreenent">Agree Ments</NavLink>
-        </li>
-        <li>
-          <NavLink to="/details">Details</NavLink>
-        </li> */}
-         
+        {/* {user ? (
+          <>
+            <NavLink
+              onClick={handlerSignout}
+              className="text-black font-semibold">
+              Log Out
+            </NavLink>{" "}
+          </>
+        ) : (
+          <>
+            {" "}
+            <li>
+              <NavLink className="  font-semibold" to="/login">
+                login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="btn-xs" to="/signup">
+                Sign Up
+              </NavLink>
+            </li>
+          </>
+        )} */}
       </div>
     </>
   );
   return (
-    <div className="navbar px-10    md:full  rounded-2xl bg-base-100 shadow-sm backdrop-blur-lg   z-50 fixed border-b-red-100 border-b-2  bg-gradient-to-r from-orange-500 to-purple-500 text-white">
+    <div className="navbar px-10       rounded-2xl bg-base-100 shadow-sm backdrop-blur-lg   z-50 fixed border-b-red-100 border-b-2  bg-gradient-to-r from-orange-500 to-purple-500 text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -79,25 +91,25 @@ const Navbers = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
             {navlink}
            {
-            user? <><NavLink 
-            // onClick={handlerSignout} 
-             className='text-black font-semibold'  >Log Out</NavLink> </> :<> <li>
+            user? <><NavLink onClick={handlerSignout}  className='text-black font-semibold'  >Log Out</NavLink> </> :<> <li>
             <NavLink className='  text-black font-semibold' to='/login'>login</NavLink>
-            </li></>
+            </li>
+            <li>
+                 <NavLink className='text-black font-semibold' to='/signup'>Sign Up</NavLink>
+            </li>
+            </>
            }
           </ul>
         </div>
         <div className="flex  gap-2 items-center">
-          {/* <img className="h-15 rounded-4xl w-15" src={img1} alt="" /> */}
-          <a className="   font-semibold  nd:text-xl">Car_Swift</a>
+          <img className="h-15 rounded-4xl w-15" src={img1} alt="" />
+          <a className="font-semibold nd:text-xl">Car_Swift</a>
         </div>
       </div>
 
-      <div className="navbar-end">
+      <div className=" navlink navbar-end">
         <div className="  hidden lg:flex">
-          <ul className="menu navlink menu-horizontal px-1">
-            {navlink}
-            </ul>
+          <ul className="menu menu-horizontal px-1">{navlink}</ul>
         </div>
 
         {
@@ -127,9 +139,7 @@ const Navbers = () => {
              
              <li>
               {
-                  user ?   <NavLink
-                //    onClick={handlerSignout}
-                    className='btn-xs'  >Log Out</NavLink>  :    
+                  user ?   <NavLink onClick={handlerSignout}  className='btn-xs'  >Log Out</NavLink>  :    
                      <> <NavLink className='btn-xs' to='/login'>login</NavLink>
             
                      <NavLink className='btn-xs' to='/signup'>Sign Up</NavLink></>
@@ -138,9 +148,9 @@ const Navbers = () => {
               </li>
              
             </ul>
-          </div>: <div className="flex items-center gap-4"> <NavLink className='btn-xs' to='/login'>login</NavLink>
+          </div>: <div className="  items-center hidden  md:inline-flex gap-4"> <NavLink className='btn-xs' to='/login'>login</NavLink>
             
-            <NavLink className='btn-xs' to='/signup'>Sign Up</NavLink></div>
+            <NavLink className='btn-xs  ' to='/signup'>SignUp</NavLink></div>
         }
       </div>
     </div>

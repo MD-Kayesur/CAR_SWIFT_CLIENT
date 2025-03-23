@@ -9,7 +9,7 @@ import { Outlet } from 'react-router-dom';
     return (
         <div>
         <Navbers></Navbers>
-        <div className='py-30'>
+        <div className='py-25'>
             <Outlet></Outlet>
         </div>
         <Footer></Footer>
