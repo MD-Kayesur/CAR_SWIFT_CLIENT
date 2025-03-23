@@ -1,0 +1,83 @@
+[
+    {
+      "image": "/path-to-car1.jpg",
+      "model": "Toyota Camry 2023",
+      "price": "$45/day",
+      "availability": true,
+      "booking_count": 12,
+      "date_posted": "2 days ago"
+    },
+    {
+      "image": "/path-to-car2.jpg",
+      "model": "Yaris Rs 2025",
+      "price": "$125/day",
+      "availability": false,
+      "booking_count": 5,
+      "date_posted": "1 day ago"
+    },
+    {
+      "image": "/path-to-car3.jpg",
+      "model": "Honda Accord 2024",
+      "price": "$60/day",
+      "availability": true,
+      "booking_count": 8,
+      "date_posted": "3 days ago"
+    },
+    {
+      "image": "/path-to-car4.jpg",
+      "model": "BMW X5 2025",
+      "price": "$150/day",
+      "availability": true,
+      "booking_count": 20,
+      "date_posted": "5 days ago"
+    },
+    {
+      "image": "/path-to-car5.jpg",
+      "model": "Nissan Altima 2023",
+      "price": "$50/day",
+      "availability": true,
+      "booking_count": 10,
+      "date_posted": "1 day ago"
+    },
+    {
+      "image": "/path-to-car6.jpg",
+      "model": "Ford Mustang 2024",
+      "price": "$80/day",
+      "availability": true,
+      "booking_count": 15,
+      "date_posted": "4 days ago"
+    },
+    {
+      "image": "/path-to-car7.jpg",
+      "model": "Tesla Model 3 2025",
+      "price": "$90/day",
+      "availability": true,
+      "booking_count": 25,
+      "date_posted": "2 days ago"
+    },
+    {
+      "image": "/path-to-car8.jpg",
+      "model": "Chevrolet Malibu 2023",
+      "price": "$55/day",
+      "availability": true,
+      "booking_count": 7,
+      "date_posted": "6 days ago"
+    },
+    {
+      "image": "/path-to-car9.jpg",
+      "model": "Kia Sportage 2024",
+      "price": "$70/day",
+      "availability": false,
+      "booking_count": 13,
+      "date_posted": "3 days ago"
+    },
+    {
+      "image": "/path-to-car10.jpg",
+      "model": "Jeep Wrangler 2025",
+      "price": "$110/day",
+      "availability": true,
+      "booking_count": 30,
+      "date_posted": "5 days ago"
+    }
+  ]
+  

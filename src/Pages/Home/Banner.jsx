@@ -1,6 +1,16 @@
- import img1 from '../../Images/cars_banner/banner5.jpg'
+ import { useNavigate } from 'react-router-dom';
+import img1 from '../../Images/cars_banner/banner5.jpg'
  import "./banner.css";
 const Banner = () => {
+const Navigate = useNavigate()
+const handleClick =()=>{
+    Navigate('/availablecars')
+}
+
+
+  
+
+
     return (
         <div
         className="hero min-h-screen"
@@ -15,7 +25,7 @@ const Banner = () => {
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
               quasi. In deleniti eaque aut repudiandae et a id nisi.
             </p>
-            <button className="btn btn-primary">View Available Cars</button>
+            <button onClick={handleClick} className="btn btn-primary">View Available Cars</button>
           </div>
         </div>
       </div>

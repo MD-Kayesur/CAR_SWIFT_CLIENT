@@ -4,6 +4,10 @@ import Home from "../Pages/Home/Home";
 import Login from "../authentication/Login";
 import Signup from "../authentication/Signup";
 import SvailableCars from "../Pages/Available_Cars/SvailableCars";
+import AddCar from "../Pages/Add_Car/AddCar";
+import MyBooking from "../Pages/My_Bookings/MyBooking";
+import MyCars from "../Pages/My_Cars/MyCars";
+import CarsCollections from "../Pages/Home/CarsCollection/CarsCollections";
 
  
 export const router = createBrowserRouter([
@@ -17,16 +21,20 @@ export const router = createBrowserRouter([
         },
         {
             path:'/availablecars',
-            element:<SvailableCars></SvailableCars>
+            element:<CarsCollections></CarsCollections>
         },
-        // {
-        //     path:'/apartment',
-        //     element:< PrivateRoute ><Apartment></Apartment></ PrivateRoute >
-        // },
-        // {
-        //     path:'/blog',
-        //     element:<Blog></Blog>
-        // },
+        {
+            path:'/addcard',
+            element:<   ><AddCar></AddCar></   >
+        },
+        {
+            path:'/mybooking',
+            element:<MyBooking></MyBooking>
+        },
+        {
+            path:'/mycars',
+            element:<MyCars></MyCars>
+        },
         {
             path:'/login',
             element:<Login></Login>

@@ -32,13 +32,13 @@ const Navbers = () => {
           <NavLink to="/availablecars">Available_Cars</NavLink>
         </li>
         <li>
-          <NavLink to="/My_Cars">My_Cars</NavLink>
+          <NavLink to="/mycars">My_Cars</NavLink>
         </li>
         <li>
-          <NavLink to="/Add_Cars">Add_Cars</NavLink>
+          <NavLink to="/addcard">Add_Cars</NavLink>
         </li>
         <li>
-          <NavLink to="/My_Booking">My_Booking</NavLink>
+          <NavLink to="/mybooking">My_Booking</NavLink>
         </li>
         {/* {user ? (
           <>
