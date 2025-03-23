@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 
 const CorCollection = () => {
 
-const [cars,setcars] = useState([])
+const [allcars,setallcars] = useState([])
 // console.log(datas)
 useEffect(()=>{
     fetch('../../../public/AllCars.json')
     .then(res=>res.json())
     .then(data=>{
-        setcars(data)
+        setallcars(data)
     })
 },[])
 
@@ -19,7 +19,7 @@ useEffect(()=>{
 
     return (
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-      {cars.slice(0,4).map((car) => <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      {allcars.map((car) => <div className="bg-white shadow-lg rounded-lg overflow-hidden">
     <img src={car.image} alt={car.model} className="w-full h-48 object-cover" />
     <div className="p-4">
       <h3 className="text-xl font-bold">{car.model}</h3>

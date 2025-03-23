@@ -8,6 +8,9 @@ import AddCar from "../Pages/Add_Car/AddCar";
 import MyBooking from "../Pages/My_Bookings/MyBooking";
 import MyCars from "../Pages/My_Cars/MyCars";
 import CarsCollections from "../Pages/Home/CarsCollection/CarsCollections";
+import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
+import AllDiscountsCar from "../Pages/Home/DiscountCars/AllDiscountsCar";
+import Discountetails from "../Pages/Home/DiscountCars/DiscountDetails/Discountetails";
 
  
 export const router = createBrowserRouter([
@@ -21,7 +24,15 @@ export const router = createBrowserRouter([
         },
         {
             path:'/availablecars',
-            element:<CarsCollections></CarsCollections>
+            element:<CorCollection></CorCollection>
+        },
+        {
+            path:'/alldiscountscars',
+            element:<AllDiscountsCar></AllDiscountsCar>
+        },
+        {
+            path:'/alldiscountscars/discountdetails/:id',
+            element:<Discountetails></Discountetails>
         },
         {
             path:'/addcard',

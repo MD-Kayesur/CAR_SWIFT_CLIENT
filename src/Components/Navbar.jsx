@@ -32,6 +32,9 @@ const Navbers = () => {
           <NavLink to="/availablecars">Available_Cars</NavLink>
         </li>
         <li>
+          <NavLink to="/alldiscountscars">All_Discount_Cars</NavLink>
+        </li>
+        <li>
           <NavLink to="/mycars">My_Cars</NavLink>
         </li>
         <li>
@@ -40,6 +43,9 @@ const Navbers = () => {
         <li>
           <NavLink to="/mybooking">My_Booking</NavLink>
         </li>
+        {/* <li>
+          <NavLink to="/discountdetails">DisCoubt Details</NavLink>
+        </li> */}
         {/* {user ? (
           <>
             <NavLink
