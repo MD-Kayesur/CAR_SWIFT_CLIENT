@@ -7,6 +7,7 @@ import DiscountCars from "./DiscountCars/DiscountCars";
 import RentingMode from "./RentingMode";
 import RidersBanner from "./RidersBanner";
 import CostomerExparience from "./costomExpariance/CostomerExparience";
+import AskedQuestion from "./AskedQuaision";
 
 const Home = () => {
   return (
@@ -26,6 +27,8 @@ const Home = () => {
       <RidersBanner></RidersBanner>
       <Header title={" Customer Experiences That Speak for Themselves "}></Header>
       <CostomerExparience></CostomerExparience>
+      <Header title={" Frequently Asked Questions"}></Header>
+      <AskedQuestion></AskedQuestion>
     </div>
   );
 };
