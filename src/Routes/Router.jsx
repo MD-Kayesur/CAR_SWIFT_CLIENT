@@ -14,6 +14,7 @@ import Discountetails from "../Pages/Home/DiscountCars/DiscountDetails/Discounte
 import CarDetails from "../Pages/Home/CarsCollection/CarDetails/CarDetails";
 import DashBord from "../Pages/DashBord/DashBord";
 import MyProfile from "../Pages/DashBord/MyProfile";
+import AllUser from "../Pages/DashBord/AllUser";
 
  
 export const router = createBrowserRouter([
@@ -71,10 +72,10 @@ export const router = createBrowserRouter([
                 path: "myprofile",
                 element: <MyProfile></MyProfile>,
               }, 
-            // {
-            //     path: "allusers",
-            //     element: < AllUsers></ AllUsers>,
-            //   },
+            {
+                path: "allusers",
+                element: <AllUser></AllUser>,
+              },
         ]
     }
   ]);

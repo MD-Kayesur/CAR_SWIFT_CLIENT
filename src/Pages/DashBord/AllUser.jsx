@@ -1,16 +1,19 @@
 import { QueryCache, useQuery, useQueryClient } from "@tanstack/react-query";
-import useAxious from "../../../Hooks/useAxious";
+// import useAxious from "../../../Hooks/useAxious";
 import { useContext, useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
+
+import { AuthContext } from "../../authentication/AuthProvider";
 import axios from "axios";
-import { AuthContext } from "../../../Providers/AuthProviders";
+import useAxious from "../../Hooks/useAxious";
+ 
 
 const AllUser = () => {
   // const [user,setusers]= useState([])
   const AxiousURL = useAxious();
-  const { user } = useContext(AuthContext);
-  const isAdmin = user?.email === "iamadmin@gmaill.com";
+  const { user,loding } = useContext(AuthContext);
+//   const isAdmin = user?.email === "iamadmin@gmaill.com";
 
   const { refetch, data: users = [] } = useQuery({
     queryKey: ["users"],
@@ -20,7 +23,7 @@ const AllUser = () => {
     },
   });
 
-//   console.log(users);
+  console.log(users);
   const handleDelet = (user) => {
     Swal.fire({
       title: "Are you sure?",
@@ -32,7 +35,7 @@ const AllUser = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        AxiousURL.delete(`/users/${user._id}`).then((res) => {
+        axios.delete(`/users/${user._id}`).then((res) => {
         //   console.log(res.data);
           if (res.data.deletedCount > 0) {
             refetch();
@@ -68,7 +71,7 @@ const AllUser = () => {
         </thead>
         <tbody>
           {/* row 1 */}
-          {users.map((user, index) => (
+          {users?.map((user, index) => (
             <tr>
               <th>{index + 1}</th>
               <td>{user.name}</td>

@@ -16,7 +16,7 @@ import { app } from "../FireBase/FireBase.config";
   
   const AuthProviders = ({ children }) => {
     const [user, setUser] = useState(null);
-    // console.log(user);
+    console.log(user);
   
     const [loding, setLoding] = useState(true);
   
