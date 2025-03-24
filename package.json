@@ -12,6 +12,7 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.2",
     "@tailwindcss/vite": "^4.0.15",
+    "boxicons": "^2.1.4",
     "css-loader": "^7.1.2",
     "firebase": "^11.5.0",
     "localforage": "^1.10.0",
