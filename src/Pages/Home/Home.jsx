@@ -16,17 +16,20 @@ const Home = () => {
       <Banner></Banner>
       <Header title={"Browse Our Car Collection  "}> </Header>
       <CarsCollections></CarsCollections>
-      <Header title={" Now Running Special  Discount for you  "}> </Header>
-<DiscountCars></DiscountCars> 
+
       <Header title={" More than just a rental – A better experience "}>
         {" "}
-      </Header> 
+      </Header>
       <WhyChooseUs></WhyChooseUs>
+
+      <Header title={" Now Running Special  Discount for you  "}> </Header>
+      <DiscountCars></DiscountCars>
 
       <Header title={" Renting Made Easy  "}> </Header>
       <RentingMode></RentingMode>
       <RidersBanner></RidersBanner>
-      <Header title={" Customer Experiences That Speak for Themselves "}></Header>
+      <Header
+        title={" Customer Experiences That Speak for Themselves "}></Header>
       <CostomerExparience></CostomerExparience>
       <Header title={" Frequently Asked Questions"}></Header>
       <AskedQuestion></AskedQuestion>

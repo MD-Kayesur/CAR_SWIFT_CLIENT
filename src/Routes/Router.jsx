@@ -72,10 +72,10 @@ export const router = createBrowserRouter([
                 path: "myprofile",
                 element: <MyProfile></MyProfile>,
               }, 
-            {
-                path: "allusers",
-                element: <AllUser></AllUser>,
-              },
+            // {
+            //     path: "allusers",
+            //     element: <AllUser></AllUser>,
+            //   },
         ]
     }
   ]);

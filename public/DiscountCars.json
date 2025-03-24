@@ -1,73 +1,72 @@
 [
-    {
-      "id": 1,
-      "save": "20%",
-      "title": "Long Term Discount",
-      "description": "Save with special discounts on rentals over 7 days.",
-      "img": "https://via.placeholder.com/300x200?text=Long+Term+Discount"
-    },
-    {
-      "id": 2,
-      "save": "15%",
-      "title": "Weekend Special",
-      "description": "Book this weekend and enjoy 15% off on your rental.",
-      "img": "https://via.placeholder.com/300x200?text=Weekend+Special"
-    },
-    {
-      "id": 3,
-      "save": "10%",
-      "title": "Early Bird Offer",
-      "description": "Get 10% off when you book 30 days in advance.",
-      "img": "https://via.placeholder.com/300x200?text=Early+Bird+Offer"
-    },
-    {
-      "id": 4,
-      "save": "25%",
-      "title": "Group Booking Discount",
-      "description": "Enjoy a 25% discount on group bookings of 5 or more.",
-      "img": "https://via.placeholder.com/300x200?text=Group+Booking+Discount"
-    },
-    {
-      "id": 5,
-      "save": "30%",
-      "title": "First Time User",
-      "description": "First-time users get a 30% discount on their first booking.",
-      "img": "https://via.placeholder.com/300x200?text=First+Time+User"
-    },
-    {
-      "id": 6,
-      "save": "18%",
-      "title": "Student Discount",
-      "description": "Students enjoy 18% off on all rentals with a valid ID.",
-      "img": "https://via.placeholder.com/300x200?text=Student+Discount"
-    },
-    {
-      "id": 7,
-      "save": "22%",
-      "title": "Referral Bonus",
-      "description": "Refer a friend and get 22% off on your next booking.",
-      "img": "https://via.placeholder.com/300x200?text=Referral+Bonus"
-    },
-    {
-      "id": 8,
-      "save": "12%",
-      "title": "Loyalty Reward",
-      "description": "Get 12% off as a reward for your continuous support.",
-      "img": "https://via.placeholder.com/300x200?text=Loyalty+Reward"
-    },
-    {
-      "id": 9,
-      "save": "35%",
-      "title": "Holiday Special",
-      "description": "Celebrate the season with a 35% discount on holiday rentals.",
-      "img": "https://via.placeholder.com/300x200?text=Holiday+Special"
-    },
-    {
-      "id": 10,
-      "save": "40%",
-      "title": "Flash Sale",
-      "description": "Limited-time flash sale! Enjoy 40% off on selected rentals.",
-      "img": "https://via.placeholder.com/300x200?text=Flash+Sale"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "save": "20%",
+    "title": "Long Term Discount",
+    "description": "Save with special discounts on rentals over 7 days.",
+    "img": "https://i.ibb.co.com/XZJq94cd/car10.jpg"
+  },
+  {
+    "id": 2,
+    "save": "15%",
+    "title": "Weekend Special",
+    "description": "Book this weekend and enjoy 15% off on your rental.",
+    "img": "https://i.ibb.co.com/YT1wkmY8/car9.jpg"
+  },
+  {
+    "id": 3,
+    "save": "10%",
+    "title": "Early Bird Offer",
+    "description": "Get 10% off when you book 30 days in advance.",
+    "img": "https://i.ibb.co.com/fdKq6ZYP/car8.jpg"
+  },
+  {
+    "id": 4,
+    "save": "25%",
+    "title": "Group Booking Discount",
+    "description": "Enjoy a 25% discount on group bookings of 5 or more.",
+    "img": "https://i.ibb.co.com/CKtK71Rd/car7.jpg"
+  },
+  {
+    "id": 5,
+    "save": "30%",
+    "title": "First Time User",
+    "description": "First-time users get a 30% discount on their first booking.",
+    "img": "https://i.ibb.co.com/CsbvXc0p/car6.jpg"
+  },
+  {
+    "id": 6,
+    "save": "18%",
+    "title": "Student Discount",
+    "description": "Students enjoy 18% off on all rentals with a valid ID.",
+    "img": "https://i.ibb.co.com/60sXr8x2/car5.jpg"
+  },
+  {
+    "id": 7,
+    "save": "22%",
+    "title": "Referral Bonus",
+    "description": "Refer a friend and get 22% off on your next booking.",
+    "img": "https://i.ibb.co.com/gFHpx174/car4.jpg"
+  },
+  {
+    "id": 8,
+    "save": "12%",
+    "title": "Loyalty Reward",
+    "description": "Get 12% off as a reward for your continuous support.",
+    "img": "https://i.ibb.co.com/8nxJsdTK/car3.jpg"
+  },
+  {
+    "id": 9,
+    "save": "35%",
+    "title": "Holiday Special",
+    "description": "Celebrate the season with a 35% discount on holiday rentals.",
+    "img": "https://i.ibb.co.com/HDCYvZqJ/car2.jpg"
+  },
+  {
+    "id": 10,
+    "save": "40%",
+    "title": "Flash Sale",
+    "description": "Limited-time flash sale! Enjoy 40% off on selected rentals.",
+    "img": "https://i.ibb.co.com/T6LMsxQ/car1.jpg"
+  }
+]

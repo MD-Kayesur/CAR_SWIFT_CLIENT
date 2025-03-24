@@ -2,6 +2,27 @@
 @plugin "daisyui";
 
 
+.movement {
+    transition: 0.5s ease;
+    animation: slideLeft 4s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+  }
+   
+  
+  @keyframes slideLeft {
+      0% {
+          transform: translateX( 100px);
+          opacity: 0;
+      }
+  
+      100% {
+          transform: translatey(0px);
+          opacity: 1;
+      }
+  
+  }
+
+
 .navbar a.active {
     color: #000; /* Blue color for active link */
     font-weight: bold;
