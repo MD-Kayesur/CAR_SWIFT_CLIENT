@@ -12,6 +12,8 @@ import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
 import AllDiscountsCar from "../Pages/Home/DiscountCars/AllDiscountsCar";
 import Discountetails from "../Pages/Home/DiscountCars/DiscountDetails/Discountetails";
 import CarDetails from "../Pages/Home/CarsCollection/CarDetails/CarDetails";
+import DashBord from "../Pages/DashBord/DashBord";
+import MyProfile from "../Pages/DashBord/MyProfile";
 
  
 export const router = createBrowserRouter([
@@ -61,18 +63,18 @@ export const router = createBrowserRouter([
         }, 
       ]
     },
-    // {
-    //     path:'/dashbord',
-    //     element:<DashBors></DashBors>,
-    //     children:[ 
-    //         {
-    //             path: "myprofile",
-    //             element: <MyProfile></MyProfile>,
-    //           }, 
-    //         {
-    //             path: "allusers",
-    //             element: < AllUsers></ AllUsers>,
-    //           },
-    //     ]
-    // }
+    {
+        path:'/dashbord',
+        element:<DashBord></DashBord>,
+        children:[ 
+            {
+                path: "myprofile",
+                element: <MyProfile></MyProfile>,
+              }, 
+            // {
+            //     path: "allusers",
+            //     element: < AllUsers></ AllUsers>,
+            //   },
+        ]
+    }
   ]);

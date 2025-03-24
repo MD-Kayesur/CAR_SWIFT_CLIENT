@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { FaHome, FaSearch } from "react-icons/fa";
 import { FaAppStore, FaBook, FaList, FaPersonRifle, FaRev, FaUsers, FaUtensils } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
-import { AuthContext } from "../../Providers/AuthProviders";
-import MyProfile from "./MyProfile";
+import { AuthContext } from "../../authentication/AuthProvider";
+ 
+ 
 
  
 
