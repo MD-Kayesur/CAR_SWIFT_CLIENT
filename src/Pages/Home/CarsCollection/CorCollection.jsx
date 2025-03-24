@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CorCollection = () => {
+    const navigate = useNavigate()
   const [allcars, setallcars] = useState([]);
   // console.log(datas)
   useEffect(() => {
@@ -10,6 +12,22 @@ const CorCollection = () => {
         setallcars(data);
       });
   }, []);
+
+
+// carDEtails butn
+
+const handleDetails =(id)=>{
+    navigate(`/cardetails/${id}`)
+    }
+
+
+
+    
+// handleBookNow btn
+
+  const handleBookNow = () => {
+    navigate("/mybooking");
+  };
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
@@ -35,14 +53,14 @@ const CorCollection = () => {
           <div className="flex justify-between items-center px-4">
         <div className="text-right my-4">
           <button 
-        //   onClick={() => handleDetails(car.id)} 
+          onClick={() => handleDetails(car.id)} 
           className="btn ">
             Details
           </button>
         </div>
         <div className="text-right my-4">
           <button 
-        //   onClick={handleBookNow} 
+          onClick={handleBookNow} 
           className="btn ">
             Book Now
           </button>

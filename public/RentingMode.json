@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "icon": "Car",
+      "color": "text-red-500",
+      "title": "Search for your perfect car",
+      "description": "Browse our platform to find the right vehicle, from economy to luxury options.",
+      "img": "https://via.placeholder.com/300x200?text=Search+for+your+perfect+car"
+    },
+    {
+      "id": 2,
+      "icon": "DollarSign",
+      "color": "text-green-500",
+      "title": "Affordable Rates",
+      "description": "Competitive pricing with no hidden fees.",
+      "img": "https://via.placeholder.com/300x200?text=Affordable+Rates"
+    },
+    {
+      "id": 3,
+      "icon": "CalendarCheck",
+      "color": "text-yellow-500",
+      "title": "Flexible Booking",
+      "description": "Book and modify your reservations with ease.",
+      "img": "https://via.placeholder.com/300x200?text=Flexible+Booking"
+    },
+    {
+      "id": 4,
+      "icon": "Headphones",
+      "color": "text-blue-500",
+      "title": "24/7 Customer Support",
+      "description": "Our support team is available to assist you anytime.",
+      "img": "https://via.placeholder.com/300x200?text=24%2F7+Customer+Support"
+    }
+  ]
+  
