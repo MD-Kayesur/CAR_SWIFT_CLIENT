@@ -8,6 +8,7 @@ import RentingMode from "./RentingMode";
 import RidersBanner from "./RidersBanner";
 import CostomerExparience from "./costomExpariance/CostomerExparience";
 import AskedQuestion from "./AskedQuaision";
+import NextJourney from "./NextJourney";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       <CostomerExparience></CostomerExparience>
       <Header title={" Frequently Asked Questions"}></Header>
       <AskedQuestion></AskedQuestion>
+      <NextJourney></NextJourney>
     </div>
   );
 };

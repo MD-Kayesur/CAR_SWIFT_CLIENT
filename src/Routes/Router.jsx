@@ -58,32 +58,21 @@ export const router = createBrowserRouter([
         {
             path:'/signup',
             element:<Signup></Signup>
-        },
-        // {
-        //     path:'/agreenent/:id',
-        //     element:<PrivateRoute ><AgreeMent></AgreeMent></PrivateRoute >,
-        //     // loader:({params})=> fetch(`http://localhost:5173/agreenent/${params.id}`)
-        // },
-        // {
-        //     path:'/details/:id',
-        //     element:<PrivateRoute ><Details></Details></PrivateRoute > ,
-        //     // loader:({params})=> fetch(`http://localhost:5173/agreenent/${params.id}`)
-        // },
-        // {
-        //     path:'/cupondetails/:id',
-        //     element:<PrivateRoute>< CuponDetails></ CuponDetails></PrivateRoute>,
-        //     // loader:({params})=> fetch(`http://localhost:5173/agreenent/${params.id}`)
-        // },
-        // {
-        //     path:'/allcupons',
-        //     element:<PrivateRoute>< AllCupons></ AllCupons></PrivateRoute>,
-        //     // loader:({params})=> fetch(`http://localhost:5173/agreenent/${params.id}`)
-        // },
-        // {
-        //     path:'/location',
-        //     element:<PrivateRoute>< Location></ Location></PrivateRoute>,
-        //     // loader:({params})=> fetch(`http://localhost:5173/agreenent/${params.id}`)
-        // },
+        }, 
       ]
     },
+    // {
+    //     path:'/dashbord',
+    //     element:<DashBors></DashBors>,
+    //     children:[ 
+    //         {
+    //             path: "myprofile",
+    //             element: <MyProfile></MyProfile>,
+    //           }, 
+    //         {
+    //             path: "allusers",
+    //             element: < AllUsers></ AllUsers>,
+    //           },
+    //     ]
+    // }
   ]);
