@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "rating": 5,
+      "review": "Smooth and hassle-free experience! Booking was super easy, and the car was ready when I arrived. The staff was friendly and professional. Highly recommend!",
+      "user": {
+        "name": "JOHN DOE",
+        "platform": "Linkedin",
+        "profile_image": "https://via.placeholder.com/150"
+      },
+      "quote_icon_color": "text-red-500"
+    },
+    {
+      "id": 2,
+      "rating": 4,
+      "review": "Good service overall. The car was clean and comfortable. The pickup was quick, but the return process could be faster.",
+      "user": {
+        "name": "JANE SMITH",
+        "platform": "Google Reviews",
+        "profile_image": "https://via.placeholder.com/150"
+      },
+      "quote_icon_color": "text-blue-500"
+    },
+    {
+      "id": 3,
+      "rating": 5,
+      "review": "Excellent customer service and a great selection of vehicles. Highly recommend for both short and long trips.",
+      "user": {
+        "name": "MARK JOHNSON",
+        "platform": "Yelp",
+        "profile_image": "https://via.placeholder.com/150"
+      },
+      "quote_icon_color": "text-green-500"
+    },
+    {
+      "id": 4,
+      "rating": 3,
+      "review": "Decent experience, but the car had a minor issue. Customer support was helpful and resolved it quickly.",
+      "user": {
+        "name": "EMILY WHITE",
+        "platform": "Facebook",
+        "profile_image": "https://via.placeholder.com/150"
+      },
+      "quote_icon_color": "text-yellow-500"
+    }
+     
+  ]
+  

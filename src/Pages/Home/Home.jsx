@@ -6,6 +6,7 @@ import CarsCollections from "./CarsCollection/CarsCollections";
 import DiscountCars from "./DiscountCars/DiscountCars";
 import RentingMode from "./RentingMode";
 import RidersBanner from "./RidersBanner";
+import CostomerExparience from "./costomExpariance/CostomerExparience";
 
 const Home = () => {
   return (
@@ -23,6 +24,8 @@ const Home = () => {
       <Header title={" Renting Made Easy  "}> </Header>
       <RentingMode></RentingMode>
       <RidersBanner></RidersBanner>
+      <Header title={" Customer Experiences That Speak for Themselves "}></Header>
+      <CostomerExparience></CostomerExparience>
     </div>
   );
 };

@@ -2,8 +2,8 @@
 
 const Header = ({title}) => {
     return (
-        <div className="py-5 text-center">
-            <h1 className="text-4xl font-bold">{title}</h1>
+        <div className="my-10 px-9 text-center">
+            <h1 className="text-5xl font-bold">{title}</h1>
             
         </div>
     );
