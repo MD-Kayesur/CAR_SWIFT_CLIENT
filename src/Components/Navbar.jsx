@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 // import "/Nacbar.css";
 import "./Nacbar.css";
 import { AuthContext } from "../authentication/AuthProvider";
+import useMovementHook from "../Hooks/useMovementHook";
 
 const Navbers = () => {
   const Navigate = useNavigate();
@@ -22,6 +23,9 @@ const Navbers = () => {
     });
   };
 
+
+  const [ref, isVisible] = useMovementHook();
+     
   const navlink = (
     <>
       <div className="  font-semibold md:flex text-black md:text-white items-center">
@@ -107,7 +111,7 @@ const Navbers = () => {
            }
           </ul>
         </div>
-        <div className="flex  gap-2 items-center">
+        <div    ref={ref}   className={`flex  gap-2 items-center ${isVisible ? "movement" : ""} `}>
           <img className="h-15 rounded-4xl w-15" src={img1} alt="" />
           <a className="font-semibold nd:text-xl">Car_Swift</a>
         </div>

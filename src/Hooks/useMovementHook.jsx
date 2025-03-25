@@ -10,7 +10,7 @@ const useMovementHook = (threshold = 0.2) => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0]; // প্রথম এন্ট্রি চেক করা
-        setIsVisible(entry.isIntersecting); // দৃশ্যমানতার স্টেট আপডেট করা
+        setIsVisible(entry.isIntersecting); // দৃশ্যমানতার  স্টেট আপডেট করা
       },
       { threshold } // থ্রেশহোল্ড কনফিগার করা
     );

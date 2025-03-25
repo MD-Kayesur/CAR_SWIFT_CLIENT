@@ -3,18 +3,18 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../authentication/Login";
 import Signup from "../authentication/Signup";
-import SvailableCars from "../Pages/Available_Cars/SvailableCars";
-import AddCar from "../Pages/Add_Car/AddCar";
+ import AddCar from "../Pages/Add_Car/AddCar";
 import MyBooking from "../Pages/My_Bookings/MyBooking";
 import MyCars from "../Pages/My_Cars/MyCars";
 import CarsCollections from "../Pages/Home/CarsCollection/CarsCollections";
-import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
+ 
 import AllDiscountsCar from "../Pages/Home/DiscountCars/AllDiscountsCar";
 import Discountetails from "../Pages/Home/DiscountCars/DiscountDetails/Discountetails";
 import CarDetails from "../Pages/Home/CarsCollection/CarDetails/CarDetails";
 import DashBord from "../Pages/DashBord/DashBord";
 import MyProfile from "../Pages/DashBord/MyProfile";
 import AllUser from "../Pages/DashBord/AllUser";
+import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
 
  
 export const router = createBrowserRouter([
@@ -72,10 +72,10 @@ export const router = createBrowserRouter([
                 path: "myprofile",
                 element: <MyProfile></MyProfile>,
               }, 
-            // {
-            //     path: "allusers",
-            //     element: <AllUser></AllUser>,
-            //   },
+            {
+                path: "allusers",
+                element: <AllUser></AllUser>,
+              },
         ]
     }
   ]);

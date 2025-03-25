@@ -21,10 +21,10 @@ useEffect(()=>{
 
          <div className="grid gap-10 grid-cols-2">
          {
-            datas.map(data=> <div className="p-6  mt-3 bg-white rounded-lg shadow-md">
-                <p className="text-gray-400 text-sm">{String(data.id).padStart(2, '0')}</p>
+            datas.map(data=> <div className="p-6  mt-3 bg-white rounded-lg shadow-md  bg-gradient-to-r from-orange-500 to-purple-500 text-white">
+                <p className=" text-sm">{String(data.id).padStart(2, '0')}</p>
                 <h2 className="text-xl font-bold my-2">{data.title}</h2>
-                <p className="text-gray-500">{data.description}</p>
+                <p className=" ">{data.description}</p>
               </div>)
            }
          </div>

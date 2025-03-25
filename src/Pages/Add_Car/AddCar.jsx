@@ -10,14 +10,16 @@ const AddCar = () => {
     const handleSubmit= (e)=>{
         e.preventDefault()
         const form = e.target
-        const location = form.location.value
-        const BlockName = form.BlockName.value
-        const BuildingName = form.BuildingName.value
-        const FloorNo = form.FloorNo.value
-        const imgurl = form.imgurl.value
-        const rent = form.rent.value
+        const Car_Model = form.Car_Model.value
+        const Daily_Rental_Price = form.Daily_Rental_Price.value
+        const Availability = form.Availability.value
+        const Vehicle_Registration_Number = form.Vehicle_Registration_Number.value
+        const Image_url = form.Image_url.value
+        const Features = form.Features.value
+        const bookingCount = form.bookingCount.value
+        const Location = form.Location.value
        
-         const info =  {location,BlockName,BlockName,FloorNo,BuildingName,imgurl,rent}
+         const info =  { Car_Model,Daily_Rental_Price,Availability,Vehicle_Registration_Number,Image_url,Features,bookingCount,Location}
         //  console.log(info);
          AxiousURL.post('/buildings',info)
          .then(res=>{
@@ -37,16 +39,25 @@ const AddCar = () => {
       }
 
 
+// Car_Model
+// Daily_Rental_Price
+// Availability
+// Vehicle_Registration_Number
+// Features (e.g., GPS, AC, etc.)
+// Description
+// bookingCount(default 0)
+// Image_url 
+// Location
 
 
     return (
         <div> 
  
 <div className="  bg-base-200  my-6 ">
-   <h2 className="text-2xl py-3 m-4"> Provide your apperment details</h2>
+   <h2 className="text-2xl py-3 m-4"> Provide your Cars details</h2>
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">save your Indestry details !</h1>
+      <h1 className="text-5xl font-bold"> If You Want You Can Add A Car !</h1>
       <p className="py-6">
         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
         quasi. In deleniti eaque aut repudiandae et a id nisi.
@@ -56,26 +67,32 @@ const AddCar = () => {
       <div className="card-body">
       <form onSubmit={handleSubmit} action="">
       <fieldset className="fieldset">
+          <label className="fieldset-label">Car_Model</label>
+          <input type="text"  name="Car_Model" className="input" placeholder="Car_Model" />
+
+          <label className="fieldset-label"> Daily_Rental_Price</label>
+          <input type="text" name="Daily_Rental_Price" className="input" placeholder=" Daily_Rental_Price" />
+
+          <label className="fieldset-label"> Availability</label>
+          <input type="text" name="Availability" className="input" placeholder=" Availability" />
+
+          <label className="fieldset-label">Vehicle_Registration_Number</label>
+          <input type="number" name="Vehicle_Registration_Number" className="input" placeholder="Vehicle_Registration_Number" />
+
+          <label className="fieldset-label">Image_url</label>
+          <input type="url"  name="Image_url" className="input" placeholder="Image_url" />
+
+          <label className="fieldset-label">Features (e.g., GPS, AC, etc.)</label>
+          <input type="number"  name="Features" className="input" placeholder="Features (e.g., GPS, AC, etc.)" />
+
+          <label className="fieldset-label">bookingCount</label>
+          <input type="number"  name="bookingCount" className="input" placeholder="bookingCount" />
+
           <label className="fieldset-label">Location</label>
-          <input type="text"  name="location" className="input" placeholder="location" />
-
-          <label className="fieldset-label"> Block Name</label>
-          <input type="text" name="BlockName" className="input" placeholder=" Block Name" />
-
-          <label className="fieldset-label"> Building Name</label>
-          <input type="text" name="BuildingName" className="input" placeholder=" Building Name" />
-
-          <label className="fieldset-label">Floor No</label>
-          <input type="number" name="FloorNo" className="input" placeholder="Floor No" />
-
-          <label className="fieldset-label"> Img URL</label>
-          <input type="url"  name="imgurl" className="input" placeholder=" Img URL" />
-
-          <label className="fieldset-label">Rent</label>
-          <input type="number"  name="rent" className="input" placeholder="Rent" />
+          <input type="number"  name="Location" className="input" placeholder="Location" />
 
  
-          <  button  className="btn btn-neutral mt-4">  Add  A Appertment</  button>
+          <  button  className="btn btn-neutral mt-4">  Add  A Car</  button>
         </fieldset>
       </form>
       </div>

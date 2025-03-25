@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CorCollection from "./CorCollection";
 import { useNavigate } from "react-router-dom";
+import useMovementHook from "../../../Hooks/useMovementHook";
 
 const CarsCollections = () => {
   const navogate = useNavigate();
@@ -33,9 +34,16 @@ navogate(`/cardetails/${id}`)
   const handleBookNow = () => {
     navogate("/mybooking");
   };
+
+
+
+
+
+//   const [ref, isVisible] = useMovementHook();
+
   return (
     <>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+      <div   className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4    `}>
         {cars.slice(0, 5).map((car) => (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img

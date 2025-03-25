@@ -6,7 +6,7 @@
       "user": {
         "name": "JOHN DOE",
         "platform": "Linkedin",
-        "profile_image": "https://via.placeholder.com/150"
+        "profile_image": "https://i.ibb.co.com/sGC2BQN/download.jpg"
       },
       "quote_icon_color": "text-red-500"
     },
@@ -17,7 +17,7 @@
       "user": {
         "name": "JANE SMITH",
         "platform": "Google Reviews",
-        "profile_image": "https://via.placeholder.com/150"
+        "profile_image": "https://i.ibb.co.com/sGC2BQN/download.jpg"
       },
       "quote_icon_color": "text-blue-500"
     },
@@ -28,7 +28,7 @@
       "user": {
         "name": "MARK JOHNSON",
         "platform": "Yelp",
-        "profile_image": "https://via.placeholder.com/150"
+        "profile_image": "https://i.ibb.co.com/sGC2BQN/download.jpg"
       },
       "quote_icon_color": "text-green-500"
     },
@@ -39,7 +39,7 @@
       "user": {
         "name": "EMILY WHITE",
         "platform": "Facebook",
-        "profile_image": "https://via.placeholder.com/150"
+        "profile_image": "https://i.ibb.co.com/sGC2BQN/download.jpg"
       },
       "quote_icon_color": "text-yellow-500"
     }

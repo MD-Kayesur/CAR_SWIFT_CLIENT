@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
  
 
@@ -15,9 +15,7 @@ const AllDiscountsCar = () => {
         })
     },[])
     
-    const handleDetails =(id)=>{
-        navogate(`discountdetails/${id}`)
-    }
+    
     return (
         <>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -30,7 +28,7 @@ const AllDiscountsCar = () => {
             <div className="mt-4">
               <span className="text-lg font-bold text-green-500">{discount.save} Off</span>
             </div>
-            <div className='text-right my-4'><button onClick={( )=>handleDetails(discount?.id)} className='btn '> See details</button></div>
+             <div className='text-right my-4'><NavLink  to={`discountdetails/${discount.id}`} className='btn '> See details</NavLink></div>
           </div>
         </div>
       ))}

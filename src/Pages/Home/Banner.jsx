@@ -14,12 +14,12 @@ const [ref, isVisible] = useMovementHook();
 
     return (
         <div
-        className="hero min-h-screen"
+        className="hero  min-h-screen"
         style={{
             backgroundImage: `url(${img1})`,
         }}>
-        <div className="hero-overlay"></div>
-        <div className="  hero-content  text-neutral-content text-center">
+        <div className="hero-overlay backdrop-blur-sm bg-white/10"></div>
+        <div className="  hero-content  text-neutral-content  text-center">
           <div ref={ref} className={`${isVisible ? "movement" : ""}`}>
             <h1 className="mb-5 banner text-4xl font-bold">"Drive Your Dreams Today!" or "Your Next Car Awaits You."</h1>
             <p className="mb-5">

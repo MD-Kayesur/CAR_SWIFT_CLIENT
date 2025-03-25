@@ -3,24 +3,23 @@
 
 
 .movement {
-    transition: 0.5s ease;
-    animation: slideLeft 4s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
-  }
+    transition: 0.2s ease;
+    animation: slideBottom 2s ease forwards;
+    animation-delay: calc(0.2s * var(--i)); /* অ্যাকশন বিলম্বিত করার জন্য */
+}
    
-  
-  @keyframes slideLeft {
-      0% {
-          transform: translateX( 100px);
-          opacity: 0;
-      }
-  
-      100% {
-          transform: translatey(0px);
-          opacity: 1;
-      }
-  
-  }
+@keyframes slideBottom {  /* নাম পরিবর্তন করে সঠিক বানান রাখা হয়েছে */
+    0% {
+        transform: translateY(50px); /* উপাদানটি ডান দিকে সরবে */
+        opacity: 0; /* প্রথম অবস্থায় অদৃশ্য */
+    }
+
+    100% {
+        transform: translateX(0); /* উপাদানটি তার মূল অবস্থানে ফিরে আসবে */
+        opacity: 1; /* শেষ অবস্থায় দৃশ্যমান */
+    }
+}
+
 
 
 .navbar a.active {
