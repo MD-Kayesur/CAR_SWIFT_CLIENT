@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAxious from "../../../Hooks/useAxious";
+import { useQuery } from "@tanstack/react-query";
 
  
 
@@ -7,13 +9,25 @@ const DiscountCars = () => {
         const navogate = useNavigate()
     const [discounts,setdiscounts] = useState([])
     console.log(discounts)
-    useEffect(()=>{
-        fetch('../../../public/DiscountCars.json')
-        .then(res=>res.json())
-        .then(data=>{
-            setdiscounts(data)
-        })
-    },[])
+
+    const AxiousURL = useAxious();
+    const { refetch, data: DiscountCars = [] } = useQuery({
+      queryKey: ["DiscountCars"],
+      queryFn: async () => {
+        const result = await AxiousURL.get("/DiscountCar");
+        return refetch, result.data;
+      },
+    });
+
+
+
+    // useEffect(()=>{
+    //     fetch('../../../public/DiscountCars.json')
+    //     .then(res=>res.json())
+    //     .then(data=>{
+    //         setdiscounts(data)
+    //     })
+    // },[])
     
 
     const handleDetails =(id)=>{
@@ -30,7 +44,7 @@ const DiscountCars = () => {
 <>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-      {discounts.slice(0,4).map((discount, index) => (
+      {DiscountCars.slice(0,4).map((discount, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
           <img src={discount.img} alt={discount.title} className="w-full h-48 object-cover" />
           <div className="p-4">

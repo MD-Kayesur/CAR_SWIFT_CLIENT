@@ -1,91 +1,91 @@
 [
   {
     "id": 1,
-    "image": "https://i.ibb.co.com/T6LMsxQ/car1.jpg",
+    "Image_url": "https://i.ibb.co.com/T6LMsxQ/car1.jpg",
     "model": "Toyota Camry 2023",
     "price": "$45/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 12,
     "date_posted": "2 days ago"
   },
   {
     "id": 2,
-    "image": "https://i.ibb.co.com/HDCYvZqJ/car2.jpg",
+    "Image_url": "https://i.ibb.co.com/HDCYvZqJ/car2.jpg",
     "model": "Yaris Rs 2025",
     "price": "$125/day",
-    "availability": false,
+    "Availability": "false",
     "booking_count": 5,
     "date_posted": "1 day ago"
   },
   {
     "id": 3,
-    "image": "https://i.ibb.co.com/8nxJsdTK/car3.jpg",
+    "Image_url": "https://i.ibb.co.com/8nxJsdTK/car3.jpg",
     "model": "Honda Accord 2024",
     "price": "$60/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 8,
     "date_posted": "3 days ago"
   },
   {
     "id": 4,
-    "image": "https://i.ibb.co.com/gFHpx174/car4.jpg",
+    "Image_url": "https://i.ibb.co.com/gFHpx174/car4.jpg",
     "model": "BMW X5 2025",
     "price": "$150/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 20,
     "date_posted": "5 days ago"
   },
   {
     "id": 5,
-    "image": "https://i.ibb.co.com/60sXr8x2/car5.jpg",
+    "Image_url": "https://i.ibb.co.com/60sXr8x2/car5.jpg",
     "model": "Nissan Altima 2023",
     "price": "$50/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 10,
     "date_posted": "1 day ago"
   },
   {
     "id": 6,
-    "image": "https://i.ibb.co.com/CsbvXc0p/car6.jpg",
+    "Image_url": "https://i.ibb.co.com/CsbvXc0p/car6.jpg",
     "model": "Ford Mustang 2024",
     "price": "$80/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 15,
     "date_posted": "4 days ago"
   },
   {
     "id": 7,
-    "image": "https://i.ibb.co.com/CKtK71Rd/car7.jpg",
+    "Image_url": "https://i.ibb.co.com/CKtK71Rd/car7.jpg",
     "model": "Tesla Model 3 2025",
     "price": "$90/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 25,
     "date_posted": "2 days ago"
   },
   {
     "id": 8,
-    "image": "https://i.ibb.co.com/fdKq6ZYP/car8.jpg",
+    "Image_url": "https://i.ibb.co.com/fdKq6ZYP/car8.jpg",
     "model": "Chevrolet Malibu 2023",
     "price": "$55/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 7,
     "date_posted": "6 days ago"
   },
   {
     "id": 9,
-    "image": "https://i.ibb.co.com/YT1wkmY8/car9.jpg",
+    "Image_url": "https://i.ibb.co.com/YT1wkmY8/car9.jpg",
     "model": "Kia Sportage 2024",
     "price": "$70/day",
-    "availability": false,
+    "Availability": "false",
     "booking_count": 13,
     "date_posted": "3 days ago"
   },
   {
     "id": 10,
-    "image": "https://i.ibb.co.com/XZJq94cd/car10.jpg",
+    "Image_url": "https://i.ibb.co.com/XZJq94cd/car10.jpg",
     "model": "Jeep Wrangler 2025",
     "price": "$110/day",
-    "availability": true,
+    "Availability": "true",
     "booking_count": 30,
     "date_posted": "5 days ago"
   }

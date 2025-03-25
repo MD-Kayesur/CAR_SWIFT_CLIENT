@@ -4,7 +4,7 @@
       "icon": "Car",
       "color": "text-red-500",
       "title": "Search for your perfect car",
-      "description": "Browse our platform to find the right vehicle, from economy to luxury options.",
+      "description": "Browse our platform to find the right vehicle, from economy to luxury options."
        
     },
     {
@@ -12,7 +12,7 @@
       "icon": "DollarSign",
       "color": "text-green-500",
       "title": "Affordable Rates",
-      "description": "Competitive pricing with no hidden fees.",
+      "description": "Competitive pricing with no hidden fees."
        
     },
     {
@@ -20,7 +20,7 @@
       "icon": "CalendarCheck",
       "color": "text-yellow-500",
       "title": "Flexible Booking",
-      "description": "Book and modify your reservations with ease.",
+      "description": "Book and modify your reservations with ease."
        
     },
     {
@@ -28,7 +28,7 @@
       "icon": "Headphones",
       "color": "text-blue-500",
       "title": "24/7 Customer Support",
-      "description": "Our support team is available to assist you anytime.",
+      "description": "Our support team is available to assist you anytime."
        
     }
   ]

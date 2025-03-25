@@ -8,13 +8,13 @@ import { useQuery } from "@tanstack/react-query";
 
 const CorCollection = () => {
   const navigate = useNavigate();
-  const [allcars, setallcars] = useState([]);
+  // const [allcars, setallcars] = useState([]);
   const AxiousURL = useAxious();
 
   const { refetch, data: CarCollection = [] } = useQuery({
     queryKey: ["CarCollection"],
     queryFn: async () => {
-      const result = await AxiousURL.get("/allcar");
+      const result = await AxiousURL.get("/MyCars");
       return refetch, result.data;
     },
   });
@@ -48,28 +48,28 @@ const CorCollection = () => {
         <AllCarsBanner></AllCarsBanner>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-        {CarCollection?.map((car) => (
+        {CarCollection?.map((car) => (car?.Availability === 'true' ? <>
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src={car.image}
-              alt={car.model}
+              src={car?.Image_url}
+              alt={car?.model}
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-bold">{car.model}</h3>
-              <p className="text-gray-600">{car.price}</p>
+              <h3 className="text-xl font-bold">{car?.model}</h3>
+              <p className="text-gray-600">{car?.Car_Model}</p>
               <p
                 className={`text-sm ${
-                  car.availability ? "text-green-500" : "text-red-500"
+                  car?.Availability ? "text-green-500" : "text-red-500"
                 }`}>
-                {car.availability ? "Available" : "Not Available"}
+                {car?.Availability ? "Available" : "Not Available"}
               </p>
-              <p className="text-gray-400">Bookings: {car.booking_count}</p>
-              <p className="text-gray-400">Added {car.date_posted}</p>
+              <p className="text-gray-400">Bookings: {car?.booking_count}</p>
+              <p className="text-gray-400">Added {car?.date_posted}</p>
             </div>
             <div className="flex justify-between items-center px-4">
               <div className="text-right my-4">
-                <button onClick={() => handleDetails(car.id)} className="btn ">
+                <button onClick={() => handleDetails(car?.id)} className="btn ">
                   Details
                 </button>
               </div>
@@ -80,7 +80,7 @@ const CorCollection = () => {
               </div>
             </div>
           </div>
-        ))}
+        </> : <></>))}
       </div>
     </div>
   );

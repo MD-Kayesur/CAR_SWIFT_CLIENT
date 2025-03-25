@@ -2,18 +2,29 @@ import React, { useEffect, useState } from "react";
 import CorCollection from "./CorCollection";
 import { useNavigate } from "react-router-dom";
 import useMovementHook from "../../../Hooks/useMovementHook";
+import useAxious from "../../../Hooks/useAxious";
+import { useQuery } from "@tanstack/react-query";
 
 const CarsCollections = () => {
   const navogate = useNavigate();
-  const [cars, setcars] = useState([]);
+//   const [cars, setcars] = useState([]);
   // console.log(datas)
-  useEffect(() => {
-    fetch("../../../public/AllCars.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setcars(data);
-      });
-  }, []);
+  const AxiousURL = useAxious();
+  const { refetch, data: CarsCollections = [] } = useQuery({
+    queryKey: ["CarsCollections"],
+    queryFn: async () => {
+      const result = await AxiousURL.get("/allcars");
+      return refetch, result.data;
+    },
+  });
+
+//   useEffect(() => {
+//     fetch("../../../public/AllCars.json")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setcars(data);
+//       });
+//   }, []);
 
 
 // carDEtails butn
@@ -44,7 +55,7 @@ navogate(`/cardetails/${id}`)
   return (
     <>
       <div   className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4    `}>
-        {cars.slice(0, 5).map((car) => (
+        {CarsCollections.slice(0, 5).map((car) => (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
               src={car.image}

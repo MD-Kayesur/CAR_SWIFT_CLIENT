@@ -12,28 +12,45 @@ const AddCar = () => {
         const form = e.target
         const Car_Model = form.Car_Model.value
         const Daily_Rental_Price = form.Daily_Rental_Price.value
-        const Availability = form.Availability.value
+         const Availability = form.Availability.value;
         const Vehicle_Registration_Number = form.Vehicle_Registration_Number.value
         const Image_url = form.Image_url.value
         const Features = form.Features.value
         const bookingCount = form.bookingCount.value
         const Location = form.Location.value
-       
+       console.log(typeof(Availability))
          const info =  { Car_Model,Daily_Rental_Price,Availability,Vehicle_Registration_Number,Image_url,Features,bookingCount,Location}
         //  console.log(info);
-         AxiousURL.post('/buildings',info)
+         AxiousURL.post('/MyCars',info) 
          .then(res=>{
+            console.log(res.data)
           if (res.data.insertedId) {
            Swal.fire({
                    title: " successly added your indestry details!",
                    icon: "success",
                    draggable: true,
                  });
-            Navigate('/apartment')
+            Navigate('/mycars')
             return ''
             
           }
          })
+
+
+        //  AxiousURL.post('/AllCars',info)
+        //  .then(( )=>{
+        // //     console.log(res.data)
+        // //   if (res.data.insertedId) {
+        // //    Swal.fire({
+        // //            title: " successly added your indestry details!",
+        // //            icon: "success",
+        // //            draggable: true,
+        // //          });
+          
+        // //     return ''
+            
+        // //   }
+        //  })
       
          
       }
@@ -74,7 +91,7 @@ const AddCar = () => {
           <input type="text" name="Daily_Rental_Price" className="input" placeholder=" Daily_Rental_Price" />
 
           <label className="fieldset-label"> Availability</label>
-          <input type="text" name="Availability" className="input" placeholder=" Availability" />
+          <input type="text" name="Availability" className="input" placeholder=" true or false" />
 
           <label className="fieldset-label">Vehicle_Registration_Number</label>
           <input type="number" name="Vehicle_Registration_Number" className="input" placeholder="Vehicle_Registration_Number" />
@@ -83,13 +100,13 @@ const AddCar = () => {
           <input type="url"  name="Image_url" className="input" placeholder="Image_url" />
 
           <label className="fieldset-label">Features (e.g., GPS, AC, etc.)</label>
-          <input type="number"  name="Features" className="input" placeholder="Features (e.g., GPS, AC, etc.)" />
+          <input type="text"  name="Features" className="input" placeholder="Features (e.g., GPS, AC, etc.)" />
 
           <label className="fieldset-label">bookingCount</label>
-          <input type="number"  name="bookingCount" className="input" placeholder="bookingCount" />
+          <input type="date"  name="bookingCount" className="input" placeholder="bookingCount" />
 
           <label className="fieldset-label">Location</label>
-          <input type="number"  name="Location" className="input" placeholder="Location" />
+          <input type="text"  name="Location" className="input" placeholder="Location" />
 
  
           <  button  className="btn btn-neutral mt-4">  Add  A Car</  button>

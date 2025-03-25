@@ -25,13 +25,8 @@ const SingleCarDetail = ({ car }) => {
                 className={`text-sm ${
                   car.availability ? "text-green-500" : "text-red-500"
                 }`}></p>
-            </div>
-
-           
-          </div>
-          
-        </div>
-        <NavLink to="/availablecars" className="btn btn-primary">
+                 <div className=" flex items-center justify-between">
+          <NavLink to="/availablecars" className="btn btn-primary">
               {" "}
               Available Cars
             </NavLink>
@@ -40,6 +35,15 @@ const SingleCarDetail = ({ car }) => {
               {" "}
               all Discount Cars{" "}
             </NavLink>
+          </div>
+            </div>
+
+           
+          </div>
+          
+        </div>
+         
+        
       </div>
     </>
   );
