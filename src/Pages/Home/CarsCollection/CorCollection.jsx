@@ -5,6 +5,7 @@ import Marquee from "react-marquee";
 import AllCarsBanner from "./AllCarsBanner";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const CorCollection = () => {
   const navigate = useNavigate();
@@ -38,10 +39,23 @@ const CorCollection = () => {
 
   // handleBookNow btn
 
-  const handleBookNow = () => {
-    navigate("/mybooking");
-  };
+  const handleBookNow = (car) => {
+    AxiousURL.post('/BookingCar',car)
+    .then(res=>{
+console.log(res.data)
+      Swal.fire({
+              title: " success!",
+              icon: "success",
+              draggable: true,
+    })
+    navigate('/mybooking')
+  })
+  }
+// pagination
 
+   
+
+  
   return (
     <div>
       <div className="mb-5">
@@ -69,16 +83,22 @@ const CorCollection = () => {
             </div>
             <div className="flex justify-between items-center px-4">
               <div className="text-right my-4">
-                <button onClick={() => handleDetails(car?.id)} className="btn ">
+                <button onClick={() => handleDetails(car?._id)} className="btn ">
                   Details
                 </button>
               </div>
               <div className="text-right my-4">
-                <button onClick={handleBookNow} className="btn ">
+                <button onClick={()=>handleBookNow(car)} className="btn ">
                   Book Now
                 </button>
               </div>
             </div>
+
+
+
+             {/* Pagination */}
+
+      
           </div>
         </> : <></>))}
       </div>

@@ -3,6 +3,7 @@ import useAxious from "../../Hooks/useAxious";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { useState } from "react";
 
  
 
@@ -50,11 +51,28 @@ const MyCars = () => {
     });
   };
 
+
+
+
+
+
+
+
+  // Pagination
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const totalPages = Math.ceil(MyCars.length / itemsPerPage);
+  const MyCarse = MyCars.slice(startIndex, endIndex);
+
   console.log(MyCars)
     return (
         <div>
          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-        {MyCars?.map((car) =>  
+        {MyCarse?.map((car) =>  
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
               src={car?.Image_url}
@@ -81,19 +99,59 @@ const MyCars = () => {
               <p className="text-gray-400">Bookings: {car?.bookingcount}</p>
               <p className="text-gray-400">Added {car?.Availability}</p>
             </div>
-            <div className="flex justify-end items-center px-4">
+            <div className="flex justify-between items-center px-4">
+            <div className="  my-4 ">
+                < NavLink
+                  to='/availablecars'
+                className="btn   ">
+                   Available Cars
+                </ NavLink>
+              </div>
               <div className="  my-4 ">
                 < button
                  onClick={()=>HandleDElate(car._id)}
-                className="btn text-red-500 ">
+                className="btn  bg-red-500 text-white ">
                   Delete
                 </ button>
               </div>
+              
                
             </div>
           </div>
          )}
       </div>
+
+{/* pagination */}
+      <div className="flex justify-center mt-5">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="btn btn-outline mr-2">
+          Previous
+        </button>
+
+        {[...Array(totalPages).keys()].map((number) => (
+          <button
+            key={number}
+            onClick={() => setCurrentPage(number + 1)}
+            className={`btn mx-1 ${
+              currentPage === number + 1 ? "btn-primary" : "btn-outline"
+            }`}>
+            {number + 1}
+          </button>
+        ))}
+
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="btn btn-outline ml-2">
+          Next
+        </button>
+      </div>
+
+
         </div>
     );
 };

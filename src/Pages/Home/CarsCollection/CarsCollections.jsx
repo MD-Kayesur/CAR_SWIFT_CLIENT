@@ -4,84 +4,88 @@ import { useNavigate } from "react-router-dom";
 import useMovementHook from "../../../Hooks/useMovementHook";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const CarsCollections = () => {
   const navogate = useNavigate();
-//   const [cars, setcars] = useState([]);
+
+  //   const [cars, setcars] = useState([]);
   // console.log(datas)
   const AxiousURL = useAxious();
   const { refetch, data: CarsCollections = [] } = useQuery({
     queryKey: ["CarsCollections"],
     queryFn: async () => {
-      const result = await AxiousURL.get("/allcars");
+      const result = await AxiousURL.get("/MyCars");
       return refetch, result.data;
     },
   });
 
-//   useEffect(() => {
-//     fetch("../../../public/AllCars.json")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setcars(data);
-//       });
-//   }, []);
+  //   useEffect(() => {
+  //     fetch("../../../public/AllCars.json")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setcars(data);
+  //       });
+  //   }, []);
 
+  // carDEtails butn
 
-// carDEtails butn
+  const handleDetails = (id) => {
+    navogate(`/cardetails/${id}`);
+  };
 
-const handleDetails =(id)=>{
-navogate(`/cardetails/${id}`)
-}
-
-
-// handleShowAll btn
+  // handleShowAll btn
 
   const handleShowAll = () => {
     navogate("/availablecars");
   };
 
-// handleBookNow btn
+  // handleBookNow btn
 
-  const handleBookNow = () => {
-    navogate("/mybooking");
+  const handleBookNow = (car) => {
+    AxiousURL.post("/BookingCar", car).then((res) => {
+      console.log(res.data);
+      Swal.fire({
+        title: " success!",
+        icon: "success",
+        draggable: true,
+      });
+      navogate('/mybooking')
+    });
   };
 
-
-
-
-
-//   const [ref, isVisible] = useMovementHook();
+  //   const [ref, isVisible] = useMovementHook();
 
   return (
     <>
-      <div   className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4    `}>
+      <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4    `}>
         {CarsCollections.slice(0, 5).map((car) => (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src={car.image}
+              src={car.Image_url}
               alt={car.model}
               className="w-full h-48 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-xl font-bold">{car.model}</h3>
-              <p className="text-gray-600">{car.price}</p>
+              <h3 className="text-xl font-bold">{car.Car_Model}</h3>
+              <p className="text-gray-600">{car.pDaily_Rental_Pricerice}</p>
               <p
                 className={`text-sm ${
-                  car.availability ? "text-green-500" : "text-red-500"
+                  car.Availability ? "text-green-500" : "text-red-500"
                 }`}>
-                {car.availability ? "Available" : "Not Available"}
+                {car.Availability ? "Available" : "Not Available"}
               </p>
-              <p className="text-gray-400">Bookings: {car.booking_count}</p>
-              <p className="text-gray-400">Added {car.date_posted}</p>
+              <p className="text-gray-400">Bookings: {car.bookingCount}</p>
+              <p className="text-gray-400">Added {car.Location}</p>
             </div>
             <div className="flex justify-between items-center px-4">
               <div className="text-right my-4">
-                <button onClick={()=>handleDetails(car.id)} className="btn ">
+                <button onClick={() => handleDetails(car._id)} className="btn ">
                   Details
                 </button>
               </div>
               <div className="text-right my-4">
-                <button onClick={handleBookNow} className="btn ">
+                <button onClick={() => handleBookNow(car._id)} className="btn ">
                   Book Now
                 </button>
               </div>

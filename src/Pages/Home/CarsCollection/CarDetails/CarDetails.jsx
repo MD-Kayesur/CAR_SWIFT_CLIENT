@@ -16,7 +16,7 @@ const params = useParams()
   const { refetch, data: CarDetails = [] } = useQuery({
     queryKey: ["CarDetails"],
     queryFn: async () => {
-      const result = await AxiousURL.get("/allcar");
+      const result = await AxiousURL.get("/MyCars");
       return refetch, result.data;
     },
   });
@@ -31,7 +31,7 @@ const params = useParams()
         <div>
            
             {
-                CarDetails.map(car=> car.id == params.id ? <> 
+                CarDetails.map(car=> car._id == params.id ? <> 
                 
                 <SingleCarDetail car={car}></SingleCarDetail>
                 
