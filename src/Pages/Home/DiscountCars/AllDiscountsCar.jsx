@@ -25,10 +25,22 @@ const AllDiscountsCar = () => {
   //     })
   // },[])
 
+
+     // Pagination
+   
+     const [currentPage, setCurrentPage] = useState(1);
+     const itemsPerPage = 6;
+   
+     const startIndex = (currentPage - 1) * itemsPerPage;
+     const endIndex = startIndex + itemsPerPage;
+     const totalPages = Math.ceil(AllDiscountsCar.length / itemsPerPage);
+     const AllDiscountsCars = AllDiscountsCar.slice(startIndex, endIndex);
+   
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {AllDiscountsCar.map((discount, index) => (
+        {AllDiscountsCars.map((discount, index) => (
           <div
             key={index}
             className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -56,6 +68,35 @@ const AllDiscountsCar = () => {
             </div>
           </div>
         ))}
+        {/* Pagination */}
+      </div>
+      <div className="flex justify-center mt-5">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="btn btn-outline mr-2">
+          Previous
+        </button>
+
+        {[...Array(totalPages).keys()].map((number) => (
+          <button
+            key={number}
+            onClick={() => setCurrentPage(number + 1)}
+            className={`btn mx-1 ${
+              currentPage === number + 1 ? "btn-primary" : "btn-outline"
+            }`}>
+            {number + 1}
+          </button>
+        ))}
+
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="btn btn-outline ml-2">
+          Next
+        </button>
       </div>
     </>
   );

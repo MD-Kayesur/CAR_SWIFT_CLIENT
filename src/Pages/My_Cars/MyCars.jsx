@@ -102,14 +102,14 @@ const MyCars = () => {
             <div className="flex justify-between items-center px-4">
             <div className="  my-4 ">
                 < NavLink
-                  to='/availablecars'
+                  to={`/updatecars/${car._id}`}
                 className="btn   ">
-                   Available Cars
+                 UpDate_CarData
                 </ NavLink>
               </div>
               <div className="  my-4 ">
                 < button
-                 onClick={()=>HandleDElate(car._id)}
+                 onClick={()=>HandleDElate(car)}
                 className="btn  bg-red-500 text-white ">
                   Delete
                 </ button>

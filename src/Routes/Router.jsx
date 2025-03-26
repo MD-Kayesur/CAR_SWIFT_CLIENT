@@ -15,6 +15,7 @@ import DashBord from "../Pages/DashBord/DashBord";
 import MyProfile from "../Pages/DashBord/MyProfile";
 import AllUser from "../Pages/DashBord/AllUser";
 import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
+// import UpdateCars from "../Pages/My_Cars/UpdateCars";
 
  
 export const router = createBrowserRouter([
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
             path:'/mycars',
             element:<MyCars></MyCars>
         },
+        // {
+        //     path:'/updatecars/:id',
+        //     element:<UpdateCars></UpdateCars>
+        // },
         {
             path:'/login',
             element:<Login></Login>

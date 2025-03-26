@@ -17,6 +17,8 @@ const MyBooking = () => {
 
 
     return (
+
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
         {BookingCars?.map((car) =>  
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -52,6 +54,7 @@ const MyBooking = () => {
                   Book Now
                 </button>
               </div>
+             
             </div>
 
 
@@ -62,6 +65,7 @@ const MyBooking = () => {
           </div>
         )}
       </div>
+        // <h2>sedfthgsfgdhfdgh</h2>
     );
 };
 
