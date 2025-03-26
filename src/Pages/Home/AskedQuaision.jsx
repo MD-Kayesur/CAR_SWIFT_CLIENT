@@ -1,7 +1,10 @@
+import useMovementHook from "../../Hooks/useMovementHook";
+
 const AskedQuestion = () => {
+    const [ref, isVisible] = useMovementHook();
   return (
-    <div>
-      <div className="collapse collapse-arrow bg-base-100 border border-base-300">
+    <div  ref={ref} className={`${isVisible ? "movement" : ""}`}>
+      <div  className={`collapse collapse-arrow bg-base-100 border border-base-300 `}>
         <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title font-bold text-3xl">
           How do I book a car?

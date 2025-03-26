@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Marquee from "react-marquee";
@@ -6,12 +6,14 @@ import AllCarsBanner from "./AllCarsBanner";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import useMovementHook from "../../../Hooks/useMovementHook";
+import { AuthContext } from "../../../authentication/AuthProvider";
 
 const CorCollection = () => {
   const navigate = useNavigate();
   // const [allcars, setallcars] = useState([]);
   const AxiousURL = useAxious();
-
+const {user}= useContext(AuthContext)
   const { refetch, data: CarCollection = [] } = useQuery({
     queryKey: ["CarCollection"],
     queryFn: async () => {
@@ -63,15 +65,17 @@ console.log(res.data)
      const totalPages = Math.ceil(CarCollection.length / itemsPerPage);
      const CarCollections = CarCollection.slice(startIndex, endIndex);
    
+console.log(CarCollections)
 
+const [ref, isVisible] = useMovementHook();
   
   return (
     <div>
       <div className="mb-5">
         <AllCarsBanner></AllCarsBanner>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-        {CarCollections?.map((car) => (car?.Availability === 'true' ? <>
+      <div ref={ref}  className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4  ${isVisible ? "movement" : ""}`}>
+        {CarCollection?.map((car) => (car?.Availability === 'true' ? <>
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
               src={car?.Image_url}
@@ -96,11 +100,15 @@ console.log(res.data)
                   Details
                 </button>
               </div>
-              <div className="text-right my-4">
+
+              {
+                user? <div className="text-right my-4">
                 <button onClick={()=>handleBookNow(car)} className="btn ">
                   Book Now
                 </button>
-              </div>
+              </div>: <></>
+              }
+              
             </div>
 
 

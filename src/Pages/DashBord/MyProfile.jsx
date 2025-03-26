@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../authentication/AuthProvider";
 import { useContext } from "react";
 import { getCurrentDateTime } from "../../Hooks/TimeHook";
+import useMovementHook from "../../Hooks/useMovementHook";
 
 const MyProfile = () => {
   const { user,signout } = useContext(AuthContext);
@@ -30,6 +31,8 @@ const MyProfile = () => {
       Navigate("/login");
     });
   };
+
+  const [ref, isVisible] = useMovementHook();
   return (
      <div
           className="hero bg-fixed bg-cover  md:mb-10     bg-gradient-to-r from-blue-500 to-purple-500 text-white ">
@@ -39,7 +42,7 @@ const MyProfile = () => {
               <div className="  hero-content flex-col md:relative  lg:flex-row">
                 <img src={name} className="max-w-xs  rounded-lg shadow-2xl" />
     
-                <div className="text-left  ">
+                <div ref={ref}  className={`text-left ${isVisible ? "movement" : ""}`} >
                   <h1 className="text-3xl   text-white font-bold">
                     Name : {photo}{" "}
                   </h1>

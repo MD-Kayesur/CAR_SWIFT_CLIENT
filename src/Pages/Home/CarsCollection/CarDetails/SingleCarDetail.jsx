@@ -1,10 +1,14 @@
 import { NavLink } from "react-router-dom";
+import useMovementHook from "../../../../Hooks/useMovementHook";
 
 const SingleCarDetail = ({ car }) => {
+
+
+    const [ref, isVisible] = useMovementHook();
   return (
     <>
       <div>
-        <div className="hero bg-base-200 min-h-screen">
+        <div ref={ref}  className={`hero bg-base-200 min-h-screen  ${isVisible ? "movement" : ""}`}>
           <div className="hero-content flex-col lg:flex-row">
             <img
               src={car.Image_url}
@@ -25,7 +29,7 @@ const SingleCarDetail = ({ car }) => {
                 className={`text-sm ${
                   car.Availability ? "text-green-500" : "text-red-500"
                 }`}></p>
-                 <div className=" flex items-center justify-between">
+                 <div className=" flex items-center gap-3 justify-between">
           <NavLink to="/availablecars" className="btn btn-primary">
               {" "}
               Available Cars

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxious from "../../Hooks/useAxious";
+import useMovementHook from "../../Hooks/useMovementHook";
 
  
 
@@ -14,14 +15,14 @@ const MyBooking = () => {
       },
     });
 
-
+    const [ref, isVisible] = useMovementHook();
 
     return (
 
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+        <div ref={ref}  className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 ${isVisible ? "movement" : ""}`}>
         {BookingCars?.map((car) =>  
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div  className={`bg-white shadow-lg rounded-lg overflow-hidden `}>
             <img
               src={car?.Image_url}
               alt={car?.model}

@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useState } from "react";
+import useMovementHook from "../../Hooks/useMovementHook";
 
  
 
@@ -69,11 +70,14 @@ const MyCars = () => {
   const MyCarse = MyCars.slice(startIndex, endIndex);
 
   console.log(MyCars)
+
+
+  const [ref, isVisible] = useMovementHook();
     return (
         <div>
-         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-        {MyCarse?.map((car) =>  
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+      <div ref={ref}  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${isVisible ? "movement" : ""}`}>
+      {MyCarse?.map((car) =>  
+          <div   className={`bg-white shadow-lg rounded-lg overflow-hidden  `}>
             <img
               src={car?.Image_url}
               alt={car?.model}

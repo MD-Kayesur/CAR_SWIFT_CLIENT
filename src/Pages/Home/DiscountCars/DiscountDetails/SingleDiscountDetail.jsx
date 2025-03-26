@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
+import useMovementHook from "../../../../Hooks/useMovementHook";
 
  
 
 const SingleDiscountDetail = ({item}) => {
-    
+    const [ref, isVisible] = useMovementHook();
     return (
         <>
-        <div className="hero bg-base-200 min-h-screen">
+        <div ref={ref}  className={`hero bg-base-200 min-h-screen ${isVisible ? "movement" : ""}`}>
   <div className="hero-content flex-col lg:flex-row">
     <img
       src={item.img}

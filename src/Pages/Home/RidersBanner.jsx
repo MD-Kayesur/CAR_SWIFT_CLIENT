@@ -5,6 +5,7 @@ import "boxicons";
 import { MdSlowMotionVideo } from "react-icons/md";
 import { useState } from "react";
 import { TbHandFingerDown } from "react-icons/tb";
+import useMovementHook from "../../Hooks/useMovementHook";
 
 const RidersBanner = () => {
   const [ShowVedio, setShowVedio] = useState(false);
@@ -19,7 +20,7 @@ const RidersBanner = () => {
 
 
  
-
+  const [ref, isVisible] = useMovementHook();
 
 
   return (
@@ -32,7 +33,7 @@ const RidersBanner = () => {
         }}>
         <div className="hero-overlay"></div>
         <div className="  hero-content  text-neutral-content text-center">
-          <div className="">
+          <div ref={ref}  className={`${isVisible ? "movement" : ""}`}>
             <h1 className="mb-5 banner md:px-15 text-4xl font-bold">
               "Drive Your Dreams Today!" or "Your Next Car Awaits You."
             </h1>

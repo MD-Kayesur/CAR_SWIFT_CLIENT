@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaCar } from "react-icons/fa6";
 import useAxious from "../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
+import useMovementHook from "../../Hooks/useMovementHook";
 
 const RentingMode = () => {
 const [datas,setDatas] = useState([])
@@ -24,9 +25,9 @@ const AxiousURL = useAxious();
 //         setDatas(data)
 //     })
 // },[])
-
+const [ref, isVisible] = useMovementHook();
     return (
-        <div className="grid gap-10 md:grid-cols-4  ">
+        <div ref={ref}  className={`grid gap-10 md:grid-cols-4  ${isVisible ? "movement" : ""}`}>
             {
                 RentingMode.map(data=> <div className="bg-gray-100 p-8 rounded-2xl shadow-lg bg-gradient-to-r from-orange-500 to-purple-500 text-white ">
                     <div className="flex items-center gap-4 mb-6">

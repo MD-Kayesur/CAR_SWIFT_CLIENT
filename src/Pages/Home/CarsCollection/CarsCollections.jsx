@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CorCollection from "./CorCollection";
 import { useNavigate } from "react-router-dom";
 import useMovementHook from "../../../Hooks/useMovementHook";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../authentication/AuthProvider";
 
 const CarsCollections = () => {
   const navogate = useNavigate();
-
+const {user}= useContext(AuthContext)
   //   const [cars, setcars] = useState([]);
   // console.log(datas)
   const AxiousURL = useAxious();
@@ -54,12 +55,12 @@ const CarsCollections = () => {
     });
   };
 
-  //   const [ref, isVisible] = useMovementHook();
+    const [ref, isVisible] = useMovementHook();
 
   return (
     <>
-      <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4    `}>
-        {CarsCollections.slice(0, 5).map((car) => (
+      <div ref={ref}  className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4   ${isVisible ? "movement" : ""} `}>
+        {CarsCollections?.slice(0, 5).map((car) => (
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
               src={car.Image_url}
@@ -84,11 +85,13 @@ const CarsCollections = () => {
                   Details
                 </button>
               </div>
-              <div className="text-right my-4">
-                <button onClick={() => handleBookNow(car._id)} className="btn ">
+              {
+                user? <div className="text-right my-4">
+                <button onClick={()=>handleBookNow(car)} className="btn ">
                   Book Now
                 </button>
-              </div>
+              </div>: <></>
+              }
             </div>
           </div>
         ))}

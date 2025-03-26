@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
+import useMovementHook from "../../../Hooks/useMovementHook";
 
 const AllDiscountsCar = () => {
   const navogate = useNavigate();
@@ -36,10 +37,10 @@ const AllDiscountsCar = () => {
      const totalPages = Math.ceil(AllDiscountsCar.length / itemsPerPage);
      const AllDiscountsCars = AllDiscountsCar.slice(startIndex, endIndex);
    
-
+     const [ref, isVisible] = useMovementHook();
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      <div ref={ref}  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${isVisible ? "movement" : ""}`}>
         {AllDiscountsCars.map((discount, index) => (
           <div
             key={index}

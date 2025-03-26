@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxious from "../../../Hooks/useAxious";
 import { useQuery } from "@tanstack/react-query";
+import useMovementHook from "../../../Hooks/useMovementHook";
 
  
 
@@ -39,11 +40,13 @@ const DiscountCars = () => {
     const handleClick =()=>{
         navogate('/alldiscountscars')
     }
+    const [ref, isVisible] = useMovementHook();
+
     return (
 
 <>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        <div ref={ref}  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${isVisible ? "movement" : ""}`}>
       {DiscountCars.slice(0,4).map((discount, index) => (
           <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
           <img src={discount.img} alt={discount.title} className="w-full h-48 object-cover" />

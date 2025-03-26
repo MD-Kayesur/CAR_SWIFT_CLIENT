@@ -1,12 +1,15 @@
+import useMovementHook from "../Hooks/useMovementHook";
+
  
 
 const Footer = () => {
+    const [ref, isVisible] = useMovementHook();
     const currentYear = new Date().getFullYear();
     return (
         <div>
             <footer className="footer sm:footer-horizontal     p-10   bg-gradient-to-r from-orange-500 to-purple-500 text-white">
  
-            <aside className="grid-flow-col items-center">
+            <aside ref={ref}  className={`grid-flow-col items-center ${isVisible ? "movement" : ""}`}>
     <svg
       width="24"
       height="24"
@@ -27,21 +30,23 @@ const Footer = () => {
  
  
  
-  <nav>
+  <nav ref={ref}  className={`${isVisible ? "movement" : ""}`}>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover">Branding</a>
     <a className="link link-hover">Design</a>
     <a className="link link-hover">Marketing</a>
     <a className="link link-hover">Advertisement</a>
   </nav>
-  <nav>
+ 
+  <nav ref={ref}  className={`${isVisible ? "movement" : ""}`}>
     <h6 className="footer-title">Company</h6>
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
     <a className="link link-hover">Jobs</a>
     <a className="link link-hover">Press kit</a>
   </nav>
-  <nav>
+  
+  <nav ref={ref}  className={`${isVisible ? "movement" : ""}`}>
     <h6 className="footer-title">Legal</h6>
     <a className="link link-hover">Terms of use</a>
     <a className="link link-hover">Privacy policy</a>
@@ -49,7 +54,7 @@ const Footer = () => {
   </nav>
 </footer>
 <footer className="footer   border-base-300 border-t px-10 py-4 bg-gradient-to-r from-orange-500 to-purple-500 text-white">
-<aside className="grid-flow-col  items-center">
+<aside ref={ref}  className={`grid-flow-col  items-center ${isVisible ? "movement" : ""}`}>
      
   <p className="text-3xl">© {currentYear} <span className="text-black font-bold px-3">Car_Swift.</span>  All Rights Reserved.</p> 
   </aside>

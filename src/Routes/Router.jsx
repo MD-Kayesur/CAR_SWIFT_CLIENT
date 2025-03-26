@@ -15,6 +15,7 @@ import DashBord from "../Pages/DashBord/DashBord";
 import MyProfile from "../Pages/DashBord/MyProfile";
 import AllUser from "../Pages/DashBord/AllUser";
 import CorCollection from "../Pages/Home/CarsCollection/CorCollection";
+import PrivateRoute from "../ProivetRout/PrivateRoute";
 // import UpdateCars from "../Pages/My_Cars/UpdateCars";
 
  
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/cardetails/:id',
-            element:<CarDetails></CarDetails>
+            element:<PrivateRoute><CarDetails></CarDetails></PrivateRoute>
         },
         {
             path:'/alldiscountscars',
@@ -41,19 +42,19 @@ export const router = createBrowserRouter([
         },
         {
             path:'/alldiscountscars/discountdetails/:id',
-            element:<Discountetails></Discountetails>
+            element:<PrivateRoute><Discountetails></Discountetails></PrivateRoute>
         },
         {
             path:'/addcard',
-            element:<   ><AddCar></AddCar></   >
+            element:<PrivateRoute  ><AddCar></AddCar></PrivateRoute  >
         },
         {
             path:'/mybooking',
-            element:<MyBooking></MyBooking>
+            element:<PrivateRoute><MyBooking></MyBooking></PrivateRoute>
         },
         {
             path:'/mycars',
-            element:<MyCars></MyCars>
+            element:<PrivateRoute> <MyCars></MyCars></PrivateRoute>
         },
         // {
         //     path:'/updatecars/:id',

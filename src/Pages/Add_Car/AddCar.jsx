@@ -2,6 +2,7 @@ import React from 'react';
 import useAxious from '../../Hooks/useAxious';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useMovementHook from '../../Hooks/useMovementHook';
 
 const AddCar = () => {
     const Navigate = useNavigate()
@@ -66,11 +67,11 @@ const AddCar = () => {
 // Image_url 
 // Location
 
-
+const [ref, isVisible] = useMovementHook();
     return (
         <div> 
  
-<div className="  bg-base-200  my-6 ">
+<div ref={ref}  className=  {`bg-base-200  my-6 ${isVisible ? "movement" : ""}`} >
    <h2 className="text-2xl py-3 m-4"> Provide your Cars details</h2>
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
