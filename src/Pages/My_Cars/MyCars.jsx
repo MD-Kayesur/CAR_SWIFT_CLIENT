@@ -3,14 +3,13 @@ import useAxious from "../../Hooks/useAxious";
 import { NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
 import axios from "axios";
-import { useState } from "react";
+import { use, useContext, useState } from "react";
 import useMovementHook from "../../Hooks/useMovementHook";
-
- 
+import { AuthContext } from "../../authentication/AuthProvider";
 
 const MyCars = () => {
-
-    const AxiousURL = useAxious();
+  const { loding } = useContext(AuthContext);
+  const AxiousURL = useAxious();
   const { refetch, data: MyCars = [] } = useQuery({
     queryKey: ["MyCars"],
     queryFn: async () => {
@@ -19,12 +18,7 @@ const MyCars = () => {
     },
   });
 
-
-
-
   const HandleDElate = (id) => {
-
-  
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -34,12 +28,10 @@ const MyCars = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-         
       if (result.isConfirmed) {
         AxiousURL.delete(`/MyCars/${id}`).then((res) => {
-           console.log(res)
+          console.log(res);
           if (res.data.deletedCount > 0) {
-
             refetch();
             Swal.fire({
               title: "Deleted!",
@@ -52,13 +44,6 @@ const MyCars = () => {
     });
   };
 
-
-
-
-
-
-
-
   // Pagination
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -69,15 +54,18 @@ const MyCars = () => {
   const totalPages = Math.ceil(MyCars.length / itemsPerPage);
   const MyCarse = MyCars.slice(startIndex, endIndex);
 
-  console.log(MyCars)
-
+  console.log(MyCars);
 
   const [ref, isVisible] = useMovementHook();
-    return (
-        <div>
-      <div ref={ref}  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${isVisible ? "movement" : ""}`}>
-      {MyCarse?.map((car) =>  
-          <div   className={`bg-white shadow-lg rounded-lg overflow-hidden  `}>
+  return (
+    <div>
+      <div
+        ref={ref}
+        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${
+          isVisible ? "movement" : ""
+        }`}>
+        {MyCarse?.map((car) => (
+          <div className={`bg-white shadow-lg rounded-lg overflow-hidden  `}>
             <img
               src={car?.Image_url}
               alt={car?.model}
@@ -91,41 +79,37 @@ const MyCars = () => {
                 {car?.Availability === "true" ? <p className="text-green-500">"Available"</p> : <p className="text-red-500">"Not Available" </p> }
               </p> */}
 
-<p
+              <p
                 className={`text-sm ${
-                  car?.Availability ==="true"? "text-green-500" : "text-red-500"
+                  car?.Availability === "true"
+                    ? "text-green-500"
+                    : "text-red-500"
                 }`}>
                 {car?.Availability === "true" ? "Available" : "Not Available"}
               </p>
-
-
 
               <p className="text-gray-400">Bookings: {car?.bookingcount}</p>
               <p className="text-gray-400">Added {car?.Availability}</p>
             </div>
             <div className="flex justify-between items-center px-4">
-            <div className="  my-4 ">
-                < NavLink
-                  to={`/updatecars/${car._id}`}
-                className="btn   ">
-                 UpDate_CarData
-                </ NavLink>
+              <div className="  my-4 ">
+                <NavLink to={`/updatecars/${car._id}`} className="btn   ">
+                  UpDate_CarData
+                </NavLink>
               </div>
               <div className="  my-4 ">
-                < button
-                 onClick={()=>HandleDElate(car)}
-                className="btn  bg-red-500 text-white ">
+                <button
+                  onClick={() => HandleDElate(car._id)}
+                  className="btn  bg-red-500 text-white ">
                   Delete
-                </ button>
+                </button>
               </div>
-              
-               
             </div>
           </div>
-         )}
+        ))}
       </div>
 
-{/* pagination */}
+      {/* pagination */}
       <div className="flex justify-center mt-5">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -154,10 +138,8 @@ const MyCars = () => {
           Next
         </button>
       </div>
-
-
-        </div>
-    );
+    </div>
+  );
 };
 
 export default MyCars;
