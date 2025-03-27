@@ -1,13 +1,13 @@
 import { FaQuoteRight, FaStar } from "react-icons/fa6";
-import useMovementHook from "../../../Hooks/useMovementHook";
+ 
 
  
 
 const SingleConstom = ({data}) => {
 
-    const [ref, isVisible] = useMovementHook();
+    
     return (
-        <div ref={ref}  className={`bg-white card-body    p-8 rounded-2xl shadow-lg   border    bg-gradient-to-r from-orange-500 to-purple-500  ${isVisible ? "movement" : ""} ` }>
+        <div   className={`bg-white card-body    p-8 rounded-2xl shadow-lg   border    bg-gradient-to-r from-orange-500 to-purple-500   ` }>
             <div className="bg-gray-100 p-8 rounded-2xl shadow-lg ">
                         {/* Rating Section */}
                         <div className="flex mb-4">
