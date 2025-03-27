@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxious from "../../Hooks/useAxious";
 import useMovementHook from "../../Hooks/useMovementHook";
+import { useState } from "react";
 
  
 
@@ -15,13 +16,25 @@ const MyBooking = () => {
       },
     });
 
+
+ // Pagination
+   
+     const [currentPage, setCurrentPage] = useState(1);
+     const itemsPerPage = 6;
+   
+     const startIndex = (currentPage - 1) * itemsPerPage;
+     const endIndex = startIndex + itemsPerPage;
+     const totalPages = Math.ceil(BookingCars.length / itemsPerPage);
+     const BookingCarss = BookingCars.slice(startIndex, endIndex);
+   
+
     const [ref, isVisible] = useMovementHook();
 
     return (
 
-
+<>
         <div ref={ref}  className={`grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 ${isVisible ? "movement" : ""}`}>
-        {BookingCars?.map((car) =>  
+        {BookingCarss?.map((car) =>  
           <div  className={`bg-white shadow-lg rounded-lg overflow-hidden `}>
             <img
               src={car?.Image_url}
@@ -66,7 +79,41 @@ const MyBooking = () => {
           </div>
         )}
       </div>
-        // <h2>sedfthgsfgdhfdgh</h2>
+        
+
+
+        {/* pagination */}
+
+
+        <div className="flex justify-center mt-5">
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="btn btn-outline mr-2">
+          Previous
+        </button>
+
+        {[...Array(totalPages).keys()].map((number) => (
+          <button
+            key={number}
+            onClick={() => setCurrentPage(number + 1)}
+            className={`btn mx-1 ${
+              currentPage === number + 1 ? "btn-primary" : "btn-outline"
+            }`}>
+            {number + 1}
+          </button>
+        ))}
+
+        <button
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
+          disabled={currentPage === totalPages}
+          className="btn btn-outline ml-2">
+          Next
+        </button>
+      </div>
+</>
     );
 };
 
