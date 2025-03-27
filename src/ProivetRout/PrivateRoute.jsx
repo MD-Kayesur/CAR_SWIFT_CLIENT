@@ -1,23 +1,42 @@
-import { Children, useContext, useEffect } from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+// import { Children, useContext, useEffect } from "react";
+// import { Navigate, Outlet, useLocation } from "react-router-dom";
+// import { AuthContext } from "../authentication/AuthProvider";
+
+import { useContext } from "react";
 import { AuthContext } from "../authentication/AuthProvider";
- 
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  const location = useLocation();
- 
+  console.log(user);
+    const location = useLocation();
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
 
-  if (user) {
-    return children;
+  if (!user || null) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
 
     // Redirect to home page if no user found
   } else {
-    <Navigate to="/login" state={{ from: location }} replace />;
+  
+    return children
   }
 };
 
 export default PrivateRoute;
+
+ 
+
+// const PrivateRoute = ({children}) => {
+// const {user} = useContext(AuthContext)
+
+// if (!user){
+//     return <Navigate to='/login'></Navigate>
+// }
+
+//  return children
+// };
+
+// export default PrivateRoute;

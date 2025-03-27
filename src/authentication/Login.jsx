@@ -17,12 +17,12 @@ import Lottie from "react-lottie";
 // import Sociallogin from "../../components/Sociallogin";
 
 function Login() {
+    const { signin,GoogleLogIn } = useContext(AuthContext);
   const captaRef = useRef(null);
   const [disabled, setDisabled] = useState(true);
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
-  const forms = location?.state?.form?.pathname || "/";
-  const { signin,GoogleLogIn } = useContext(AuthContext);
+  const forms = location.state?.form?.pathname || "/";
 
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -50,7 +50,7 @@ function Login() {
         icon: "success",
         draggable: true,
       });
-      Navigate(forms, { replace: true });
+      navigate(forms, { replace: true });
     });
   };
 
