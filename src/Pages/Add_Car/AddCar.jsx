@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useAxious from '../../Hooks/useAxious';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useMovementHook from '../../Hooks/useMovementHook';
+import { AuthContext } from '../../authentication/AuthProvider';
 
 const AddCar = () => {
     const Navigate = useNavigate()
     const AxiousURL = useAxious()
-
+const {user} = useContext(AuthContext)
+const UserName = user.displayName
     const handleSubmit= (e)=>{
         e.preventDefault()
         const form = e.target
@@ -20,7 +22,7 @@ const AddCar = () => {
         const bookingCount = form.bookingCount.value
         const Location = form.Location.value
        console.log(typeof(Availability))
-         const info =  { Car_Model,Daily_Rental_Price,Availability,Vehicle_Registration_Number,Image_url,Features,bookingCount,Location}
+         const info =  { Car_Model,Daily_Rental_Price,Availability,UserName,Vehicle_Registration_Number,Image_url,Features,bookingCount,Location}
         //  console.log(info);
          AxiousURL.post('/MyCars',info) 
          .then(res=>{
