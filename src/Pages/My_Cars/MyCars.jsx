@@ -9,6 +9,7 @@ import { AuthContext } from "../../authentication/AuthProvider";
 
 const MyCars = () => {
   const { loding } = useContext(AuthContext);
+  const {user}=useContext(AuthContext)
   const AxiousURL = useAxious();
   const { refetch, data: MyCars = [] } = useQuery({
     queryKey: ["MyCars"],
@@ -17,6 +18,9 @@ const MyCars = () => {
       return refetch, result.data;
     },
   });
+
+
+  const mycars = MyCars.filter(cars=> cars.UserName === user.displayName)
 
   const HandleDElate = (id) => {
     Swal.fire({
@@ -64,7 +68,7 @@ const MyCars = () => {
         className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ${
           isVisible ? "movement" : ""
         }`}>
-        {MyCarse?.map((car) => (
+        {mycars?.map((car) => (
           <div className={`bg-white shadow-lg rounded-lg overflow-hidden  `}>
             <img
               src={car?.Image_url}
